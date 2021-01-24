@@ -1,6 +1,6 @@
 {
-	"name": "EdooFun_Phonograph_ID",
-	"short_name": "EdooFun_Phonograph_ID",
+	"name": "EdooFun_Phonograph",
+	"short_name": "EdooFun_Phonograph",
 	"description": "",
 	"start_url": "index.html",
 	"display": "fullscreen",
