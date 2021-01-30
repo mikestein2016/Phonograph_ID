@@ -3191,10 +3191,11 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Plugins.Sprite.Acts.MoveToBottom,
+		C3.Plugins.Text.Acts.MoveToTop,
+		C3.Behaviors.DragnDrop.Acts.SetEnabled,
 		C3.Behaviors.DragnDrop.Cnds.OnDrop,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
-		C3.Behaviors.DragnDrop.Acts.SetEnabled,
-		C3.Behaviors.DragnDrop.Cnds.IsEnabled,
+		C3.Plugins.Sprite.Cnds.CompareY,
 		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
 		C3.Plugins.Sprite.Acts.SetWidth,
 		C3.Plugins.Sprite.Exps.Width,
@@ -3207,14 +3208,21 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Behaviors.Tween.Cnds.OnTweensFinished,
 		C3.Plugins.Text.Acts.Destroy,
 		C3.Plugins.System.Acts.SubVar,
-		C3.Plugins.Sprite.Cnds.CompareY,
 		C3.Behaviors.Fade.Cnds.OnFadeInEnd,
-		C3.Plugins.Text.Acts.MoveToTop,
+		C3.Plugins.System.Cnds.CompareVar,
+		C3.Plugins.Text.Acts.SetSize,
+		C3.Plugins.Text.Acts.SetHAlign,
+		C3.Plugins.Text.Acts.SetVAlign,
+		C3.Plugins.Text.Acts.SetFontFace,
+		C3.Plugins.Text.Acts.SetFontSize,
+		C3.Plugins.Text.Acts.SetFontColor,
+		C3.Plugins.System.Exps.rgbex255,
 		C3.Behaviors.MoveTo.Cnds.IsMoving,
 		C3.Behaviors.MoveTo.Acts.Stop,
 		C3.Plugins.Button.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Acts.GoToLayoutByName,
 		C3.Plugins.System.Acts.LoadState,
+		C3.Plugins.System.Cnds.OnLoadComplete,
 		C3.Plugins.Arr.Cnds.ArrForEach,
 		C3.Plugins.Arr.Exps.CurValue,
 		C3.Behaviors.Pin.Acts.Unpin,
@@ -3391,7 +3399,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{Speech_Bubble: 0},
 		{Speech_Dots: 0},
 		{Confetti: 0},
-		{Rewards_Type: 0},
 		{ArrowLeft: 0},
 		{ArrowRight: 0},
 		{Game1_Background_L0to: 0},
@@ -3441,6 +3448,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{pointText: 0},
 		{rewardCard: 0},
 		{RewardPointsText: 0},
+		{Rewards_Type: 0},
 		{Guard: 0},
 		{Motoboy: 0},
 		{PI_L1_CurrentPhonograph: 0},
@@ -3478,6 +3486,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{L4DropSpace: 0},
 		{PI_L4_Words: 0},
 		{PI_L4_WrongAnswers: 0},
+		{White_Line: 0},
 		{Labels: 0},
 		{DragDrop: 0},
 		{Images: 0},
@@ -3485,6 +3494,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{LettersOutlined: 0},
 		{L1_Phonolabels: 0},
 		{L2_Phonolabels: 0},
+		{ProgressBar: 0},
 		{AttemptDate: 0},
 		{AttemptTotalTime: 0},
 		{BackButtonTapped: 0},
@@ -3986,9 +3996,11 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{thRed: 0},
 		{whRed: 0},
 		{Honk: 0},
+		{VehicalPos: 0},
 		{PI_L2_WrongAnswer: 0},
 		{PI_L2_Tutorial_TimeSpent: 0},
 		{PI_L2_Tutorial_Completed: 0},
+		{PB_Created: 0},
 		{PI_L3_Tutorial_TimeSpent: 0},
 		{PI_L3_Tutorial_Completed: 0},
 		{PI_L3_Date: 0},
@@ -5283,10 +5295,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 			const v0 = p._GetNode(0).GetVar();
 			return () => ("VB_A_L4_5" + v0.GetValue());
 		},
-		() => "PID Get Item From Storage L0",
-		() => "PI_TimeSpent_Presentation",
-		() => "PI_L0_Completed",
-		() => "PI_PlayAgainTapped_Presentation",
 		() => "PI_L0",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -5308,6 +5316,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => 468,
 		() => 420,
 		() => 630,
+		() => "PI_A_L0_3",
 		() => "PID Data Presentation",
 		() => "PID Time Pause Presentation",
 		() => "SH",
@@ -5323,7 +5332,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 			const v0 = p._GetNode(0).GetVar();
 			return () => ("PI_A_L0_3" + v0.GetValue());
 		},
-		() => "PI_A_L0_3",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ("PI_A_L0_4" + v0.GetValue());
@@ -5423,6 +5431,14 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 			return () => (n0.ExpObject() + 20);
 		},
 		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			const n2 = p._GetNode(2);
+			const n3 = p._GetNode(3);
+			const v4 = p._GetNode(4).GetVar();
+			return () => and((and((and((((v0.GetValue() + " ") + f1()) + " "), n2.ExpObject()) + " , "), n3.ExpObject()) + " "), v4.GetValue());
+		},
+		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0("Date()");
 		},
@@ -5512,6 +5528,15 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => 1150,
 		() => 1430,
 		() => 1685,
+		() => "Yellow",
+		() => 1730,
+		() => 1595,
+		() => "Purple",
+		() => 830,
+		() => "Orange",
+		() => 785,
+		() => 0.75,
+		() => 750,
 		() => "PID L2 End",
 		() => "PID Data L2 Tutorial",
 		() => "PID UI L2 Tutorial",
@@ -5548,6 +5573,9 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "PI_A_L2_33",
 		() => 455,
 		() => "On Start",
+		() => "PI_TimeSpent_Presentation",
+		() => "PI_L0_Completed",
+		() => "PI_PlayAgainTapped_Presentation",
 		() => "PI_L1_Tutorial_TimeSpent",
 		() => "PI_L1_Tutorial_Completed",
 		() => "PI_L1_CompletedTries",
@@ -5626,28 +5654,38 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "PI_L4_TotalTappedCorrect",
 		() => "PI_L4_TotalTappedIncorrect",
 		() => "Rewards",
+		() => "PID Get Item From Storage L0",
 		() => "PID Get Variables from Storage L1 Tutorial",
 		() => "PID Get Variables from Storage L1",
 		() => "PID Get Variables from Storage L2 Tutorial",
 		() => "PID Get Variables from Storage L2",
 		() => "PID Get Variables from Storage L3 Tutorial",
 		() => "PID Get Variables from Storage L3",
+		() => "PID Get Variables from Storage L4 Tutorial",
 		() => "On End",
 		() => "PI_L1_Date",
 		() => "PI_L2_Date",
 		() => "PI_L3_Date",
 		() => "PI_L4_Date",
 		() => "PID Progress Bar",
+		() => 333,
+		() => 458,
+		() => 521,
+		() => 763,
+		() => "0",
+		() => 80.165931,
+		() => "Century Gothic",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0(255, 255, 255);
+		},
 		() => "PI_Presentation",
 		() => "PI_L1 Tutorial",
-		() => 333,
 		() => "PI_L2 Tutorial",
 		() => "PI_L3",
 		() => "PI_L3 Tutorial",
-		() => 458,
 		() => "PI_L4",
 		() => "PI_L4 Tutorial",
-		() => 521,
 		() => "PID Time Pause",
 		() => "PID Music",
 		() => "PI_A_L2_3",
@@ -5725,7 +5763,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		},
 		() => -500,
 		() => 1340,
-		() => "Purple",
 		() => 3.5,
 		() => 2.5,
 		p => {
@@ -5858,7 +5895,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "PI L3 Get & Set ",
 		() => "PI L3 On End",
 		() => "PI L3 Sets",
-		() => "empty",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue() + "_Touch");
@@ -5923,6 +5959,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "Red Outline Remover2",
 		() => "PID UI L3",
 		() => "Movement L3",
+		() => "empty",
 		() => "Blue",
 		() => "PI L3 End",
 		p => {
@@ -6349,7 +6386,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "Fish_i",
 		() => "Whale_i",
 		() => "Sphere_i",
-		() => 0.75,
 		() => "Torch_i",
 		() => "Elephant_i",
 		() => "Thief_i",
