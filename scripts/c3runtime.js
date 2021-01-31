@@ -4001,6 +4001,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{PI_L2_ProgressBarStep: 0},
 		{PI_L2_Tutorial_TimeSpent: 0},
 		{PI_L2_Tutorial_Completed: 0},
+		{PI_L3_ProgressBarStep: 0},
 		{PI_L1_Completed: 0},
 		{PB_Created: 0},
 		{PI_L3_Tutorial_TimeSpent: 0},
