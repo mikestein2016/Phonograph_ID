@@ -5928,16 +5928,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "PI L3 Word Checker ",
 		() => "L3 Set 1",
 		() => "Incorrect",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			const v2 = p._GetNode(2).GetVar();
-			const v3 = p._GetNode(3).GetVar();
-			const v4 = p._GetNode(4).GetVar();
-			const v5 = p._GetNode(5).GetVar();
-			const v6 = p._GetNode(6).GetVar();
-			return () => and((and((and((and((and((((and("Current Slot: ", v0.GetValue()) + " Slotted Word: ") + v1.GetValue()) + " Set1TorchRepeat: "), v2.GetValue()) + " Repeating: "), v3.GetValue()) + " PI_L3_Repeat_Set1: "), v4.GetValue()) + " Set1ChurchRepeat: "), v5.GetValue()) + " Set: "), v6.GetValue());
-		},
 		() => "L3 Set 1.1",
 		() => "L3 Set 1.2",
 		() => "L3 Set 2",
