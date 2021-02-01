@@ -5506,6 +5506,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => 0.25,
 		() => 885,
 		() => 230,
+		() => "L2_GameSave",
 		() => 125,
 		() => 86,
 		() => "PID Data L2",
