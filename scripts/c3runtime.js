@@ -3218,22 +3218,21 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.Text.Acts.SetFontColor,
 		C3.Plugins.System.Exps.rgbex255,
 		C3.Behaviors.MoveTo.Cnds.IsMoving,
+		C3.Plugins.System.Acts.LoadState,
+		C3.Plugins.System.Cnds.OnLoadComplete,
+		C3.Plugins.System.Acts.SaveState,
 		C3.Behaviors.MoveTo.Acts.Stop,
 		C3.Plugins.Button.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Acts.GoToLayoutByName,
-		C3.Plugins.System.Acts.LoadState,
-		C3.Plugins.System.Cnds.OnLoadComplete,
 		C3.Plugins.Arr.Cnds.ArrForEach,
 		C3.Plugins.Arr.Exps.CurValue,
 		C3.Behaviors.Pin.Acts.Unpin,
 		C3.Behaviors.DragnDrop.Cnds.IsDragging,
-		C3.Plugins.System.Acts.SaveState,
 		C3.Plugins.System.Acts.SetGroupActive,
 		C3.Plugins.Arr.Cnds.Contains,
 		C3.Plugins.Arr.Acts.Delete,
 		C3.Plugins.Arr.Exps.IndexOf,
-		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
-		C3.Plugins.Arr.Cnds.IsEmpty
+		C3.Plugins.Sprite.Cnds.CompareInstanceVar
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -4391,6 +4390,8 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{BlockNumber: 0},
 		{PI_L4_SetNumber: 0},
 		{PI_L4_CorrectAnswers: 0},
+		{WrongAnswers: 0},
+		{PI_L4_Completed: 0},
 		{PI_L4_Tutorial_TimeSpent: 0},
 		{PI_L4_Tutorial_Completed: 0},
 		{PIL4TutorialStep: 0}
@@ -5648,7 +5649,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "PI_L4_TimeSpent_Try",
 		() => "PI_L4_TimeSpent",
 		() => "PI_L4_CurrentTry",
-		() => "PI_L4_CompletedTries",
+		() => "PI_L4_Completed",
 		() => "PI_L4_NumberOfTries",
 		() => "PI_L4_BackTapped",
 		() => "PI_L4_HintTapped",
@@ -5768,12 +5769,13 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => -500,
 		() => 1340,
 		() => 3.5,
-		() => 2.5,
+		() => "Shell_Tutorial",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ("PI_A_L3_5" + v0.GetValue());
 		},
 		() => "PI L3 Current Audio ",
+		() => "L3_SaveState",
 		() => "PID Get Variables from Storage L3 Tapped",
 		() => "PI L3 On Start",
 		() => "PI_L3_sh_TappedIncorrect",
@@ -5898,6 +5900,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "PI_L3_GraphTappedIncorrect",
 		() => "PI L3 Get & Set ",
 		() => "PI L3 On End",
+		() => "PID Data L3",
 		() => "PI L3 Sets",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -6130,6 +6133,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "PI_L4_GraphTappedIncorrect",
 		() => "PI L4 Get & Set ",
 		() => "PI L4 On End",
+		() => "PID Data L4",
 		() => "PID UI L4",
 		() => "Block Numbers",
 		() => "PI L4 Sets",
@@ -6373,10 +6377,16 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => 1300,
 		() => "GameCompleted",
 		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => and(and(n0.ExpObject(), " "), v1.GetValue());
+		},
+		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ("PI_A_L4_1" + v0.GetValue());
 		},
 		() => "PID UI L4 Tutorial",
+		() => "PID Data L4 Tutorial",
 		() => "Cart Movement2",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -6403,6 +6413,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "CorrectSound1",
 		() => 677,
 		() => 135,
+		() => 2.5,
 		() => 3.6,
 		() => 127,
 		() => 3.7,
