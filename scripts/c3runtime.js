@@ -3204,6 +3204,8 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Behaviors.Fade.Acts.SetWaitTime,
 		C3.Plugins.Browser.Exps.ExecJS,
 		C3.Behaviors.Pin.Acts.PinByImagePoint,
+		C3.Plugins.System.Acts.LoadState,
+		C3.Plugins.System.Acts.SaveState,
 		C3.Plugins.Arr.Cnds.CompareSize,
 		C3.Behaviors.Tween.Cnds.OnTweensFinished,
 		C3.Plugins.Text.Acts.Destroy,
@@ -3218,9 +3220,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.Text.Acts.SetFontColor,
 		C3.Plugins.System.Exps.rgbex255,
 		C3.Behaviors.MoveTo.Cnds.IsMoving,
-		C3.Plugins.System.Acts.LoadState,
 		C3.Plugins.System.Cnds.OnLoadComplete,
-		C3.Plugins.System.Acts.SaveState,
 		C3.Behaviors.MoveTo.Acts.Stop,
 		C3.Plugins.Button.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Acts.GoToLayoutByName,
@@ -5437,19 +5437,12 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		},
 		() => "MusicL1",
 		p => {
-			const v0 = p._GetNode(0).GetVar();
-			const f1 = p._GetNode(1).GetBoundMethod();
-			const n2 = p._GetNode(2);
-			const n3 = p._GetNode(3);
-			const v4 = p._GetNode(4).GetVar();
-			return () => and((and((and((((v0.GetValue() + " ") + f1()) + " "), n2.ExpObject()) + " , "), n3.ExpObject()) + " "), v4.GetValue());
-		},
-		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0("Date()");
 		},
 		() => "PI_L1",
 		() => 365,
+		() => "L1_GameSave",
 		() => "PID Data L1",
 		() => "PID UI L1",
 		() => "Find_CurrentPhonograph",
@@ -5587,11 +5580,11 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "PI_PlayAgainTapped_Presentation",
 		() => "PI_L1_Tutorial_TimeSpent",
 		() => "PI_L1_Tutorial_Completed",
-		() => "PI_L1_CompletedTries",
 		() => "PI_L1_TimeSpent_Try",
 		() => "PI_L1_TimeSpent",
 		() => "PI_L1_CurrentTry",
 		() => "PI_L1_Completed",
+		() => "PI_L1_CompletedTries",
 		() => "PI_L1_NumberOfTries",
 		() => "PI_L1_BackTapped",
 		() => "PI_L1_HintTapped",
