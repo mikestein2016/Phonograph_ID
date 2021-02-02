@@ -4392,6 +4392,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{PI_L4_SetNumber: 0},
 		{PI_L4_CorrectAnswers: 0},
 		{WrongAnswers: 0},
+		{L4Ending: 0},
 		{PI_L4_Completed: 0},
 		{PI_L4_Tutorial_TimeSpent: 0},
 		{PI_L4_Tutorial_Completed: 0},
