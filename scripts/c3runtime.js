@@ -5529,12 +5529,11 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "L2_GameSave",
 		() => 125,
 		() => 86,
-		() => 3.75,
+		() => "CurrentWord",
 		() => "PID Data L2",
 		() => "PID UI L2",
 		() => "Honk2",
 		() => "Honk",
-		() => "CurrentWord",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue() + "_Which");
