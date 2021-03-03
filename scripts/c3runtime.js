@@ -5333,11 +5333,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 			return () => ("PI_A_L0_2" + v0.GetValue());
 		},
 		() => "PI_A_L0_2",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => ("PI_A_L0_5" + v0.GetValue());
-		},
-		() => "PI_A_L0_5",
 		() => 468,
 		() => 420,
 		() => 630,
@@ -5366,6 +5361,11 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => -300,
 		() => 265,
 		() => 595,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => ("PI_A_L0_5" + v0.GetValue());
+		},
+		() => "PI_A_L0_5",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() + 65);
